@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TelasApp</string>
+    <string name="texto1">Texte 1</string>
+    <string name="texto2">Texte 2</string>
+    <string name="texto3">Texte 3</string>
+</resources>
