@@ -20,6 +20,7 @@
         android:hint="@string/typeNameProduct"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="15dp"
+        android:id="@+id/editNomeProduto"
         />
 
     <TextView
@@ -35,6 +36,7 @@
         android:hint="@string/typevalueProduct"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="15dp"
+        android:id="@+id/editValorProduto"
         />
 
     <LinearLayout
@@ -72,13 +74,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginRight="15dp"
-            android:text="@string/qtdParc"
+            android:hint="@string/qtdParc"
+            android:id="@+id/editQtdPar"
             />
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="0"
+            android:hint="0"
+            android:id="@+id/editJuros"
             />
     </LinearLayout>
 
@@ -95,6 +99,7 @@
            android:layout_height="wrap_content"
            android:text="@string/btnCalculate"
            android:layout_weight="1"
+           android:onClick="calcular"
            android:drawableLeft="@android:drawable/ic_dialog_info"
            />
         <Button
@@ -102,8 +107,22 @@
             android:layout_height="wrap_content"
             android:text="@string/btnClear"
             android:layout_weight="1"
+            android:onClick="limparDados"
             android:drawableLeft="@android:drawable/ic_notification_clear_all"
             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPrecoFinal"
+            />
+
     </LinearLayout>
 
 
