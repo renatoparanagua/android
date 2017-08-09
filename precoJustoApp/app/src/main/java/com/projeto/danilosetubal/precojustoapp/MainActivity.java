@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText editNomeProduto, editValorProduto, editQtdPar, editJuros;
-    TextView tvPrecoFinal;
+    TextView tvValorTotal, tvNomeProduto, tvValorInicial, tvValorParcela, tvTotalJuros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
         editJuros = (EditText) findViewById(R.id.editJuros);
 
         // Resgatar textviews
-        tvPrecoFinal = (TextView) findViewById(R.id.tvPrecoFinal);
+        tvValorTotal = (TextView) findViewById(R.id.tvValorTotal);
+        tvNomeProduto = (TextView) findViewById(R.id.tvNomeProduto);
+        tvValorInicial = (TextView) findViewById(R.id.tvValorInicial);
+        tvValorParcela = (TextView) findViewById(R.id.tvValorParcela);
+        tvTotalJuros = (TextView) findViewById(R.id.tvTotalJuros);
 
     }
 
@@ -39,10 +43,16 @@ public class MainActivity extends AppCompatActivity {
         // Calcular o preço final
         double valorParcela = valorProduto / qtdParcelas;
         double precoFinal = (valorParcela + ((valorParcela * juros)/100)) * qtdParcelas;
+        double totalJuros = (juros/100) * valorProduto;
 
-        tvPrecoFinal.setText(String.format( "Total : R$ %.2f", precoFinal));
+        tvValorTotal.setText(String.format("R$ %.2f", precoFinal));
 
-        Log.d("Valor precoFinal", String.valueOf(precoFinal));
+        // Saída dos resultados
+        tvNomeProduto.setText(getString(R.string.nomeProduto) + ": " + nomeProduto);
+        tvValorInicial.setText(getString(R.string.valorInicial) + ": R$ " + String.format("%.2f", valorProduto));
+        tvValorParcela.setText(getString(R.string.valorParcelas) + ": R$ " + String.format("%.2f", valorParcela));
+        tvValorTotal.setText(getString(R.string.valorTotal) + ": R$ " + String.format("%.2f", precoFinal));
+        tvTotalJuros.setText(getString(R.string.totalJuros) + ": R$ " + String.format("%.2f", totalJuros));
     }
 
     // Limpa todos os campos e focaliza novamente no campo nomeProduto.
@@ -51,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
         editValorProduto.setText("");
         editQtdPar.setText("");
         editJuros.setText("");
-        tvPrecoFinal.setText("");
+        tvNomeProduto.setText("");
+        tvValorInicial.setText("");
+        tvValorParcela.setText("");
+        tvValorTotal.setText("");
+        tvTotalJuros.setText("");
         editNomeProduto.requestFocus();
     }
 

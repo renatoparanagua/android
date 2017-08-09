@@ -115,24 +115,37 @@
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/tvPrecoFinal"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:padding="8dp"
-            android:textSize="30dp"
-            android:textColor="#FFF"
-
-            />
-
-    </LinearLayout>
+        android:id="@+id/tvNomeProduto"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValorInicial"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValorParcela"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValorTotal"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTotalJuros"
+        android:layout_marginLeft="30dp"
+        />
 
 
 </LinearLayout>

@@ -9,9 +9,9 @@
     <string name="btnCalculate">Calcular</string>
     <string name="btnClear">Limpar</string>
 
-    <string name="fxNameProduct">Produto: </string>
-    <string name="fxValueInitial">Valor Inicial: </string>
-    <string name="fxValuePortion">Valor Parcelas: </string>
-    <string name="fxTotalValue">Valor Total: </string>
-    <string name="fxTotalJuros">Total de Juros: </string>
+    <string name="nomeProduto">Produto</string>
+    <string name="valorInicial">Valor Inicial</string>
+    <string name="valorParcelas">Valor Parcelas</string>
+    <string name="valorTotal">Valor Total</string>
+    <string name="totalJuros">Total de Juros</string>
 </resources>
