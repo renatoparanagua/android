@@ -68,8 +68,6 @@ public class PrincipalActivity extends AppCompatActivity {
             Toast.makeText(this, "Entrada inválida.", Toast.LENGTH_SHORT).show();
         }
 
-
-
         // Calcular média.
         double media = (nota1 + nota2)/2;
 
