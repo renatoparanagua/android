@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.projeto.danilosetubal.pesquisaapp.activity_dados_endereco">
+    tools:context="com.projeto.danilosetubal.pesquisaapp.DadosEnderecoActivity">
 
     <TextView
         android:layout_width="match_parent"

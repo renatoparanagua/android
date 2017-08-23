@@ -21,8 +21,8 @@
             android:label="@string/title_activity_resultado"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DadosPessoaisActivity" />
-        <activity android:name=".activity_dados_endereco" />
-        <activity android:name=".activity_dados_contato"></activity>
+        <activity android:name=".DadosEnderecoActivity" />
+        <activity android:name=".DadosContatoActivity"></activity>
     </application>
 
 </manifest>
