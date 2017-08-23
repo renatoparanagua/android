@@ -17,10 +17,12 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/editN1"
             android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/border_edittext"
             android:layout_marginRight="5dp"
+            android:inputType="numberDecimal"
             android:hint="N1"
             />
 
@@ -36,11 +38,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+"/>
+                    android:text="+"
+                    android:onClick="somar"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x"/>
+                    android:text="x"
+                    android:onClick="multiplicar"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -49,24 +53,49 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"/>
+                    android:text="-"
+                    android:onClick="subtrair"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/"/>
+                    android:text="/"
+                    android:onClick="dividr"/>
             </LinearLayout>
         </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/editN2"
             android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/border_edittext"
             android:layout_marginLeft="5dp"
+            android:inputType="numberDecimal"
             android:hint="N2"
             />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:id="@+id/layoutFinal"
+        >
+
+
+
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tvResultado"-->
+            <!--android:text="N1 op N2 = resultado"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="15dp"-->
+            <!--/>-->
 
     </LinearLayout>
 
