@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btnFinalizar:
+                it = new Intent(this, ResultadoActivity.class);
+
                 finish();
                 break;
 
@@ -61,9 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefone(param.getString("ptelefone"));
 
             } else if (requestCode == Constantes.REQUEST_DADOS_ENDERECO) {
-                // Dados de endereço
+                param = data.getExtras();
+                pessoa.setCep(param.getString("pcep"));
+                pessoa.setRua(param.getString("prua"));
+                pessoa.setCidade(param.getString("pcidade"));
+
             } else if (requestCode == Constantes.REQUEST_DADOS_PESSOAIS) {
-                // Dados pessoais
+                param = data.getExtras();
+                pessoa.setNome(param.getString("pnome"));
+                pessoa.setIdade(param.getString("pidade"));
+                pessoa.setProfissao(param.getString("pprofissao"));
             }
         }
 

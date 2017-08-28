@@ -99,6 +99,12 @@ public class Pessoa {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", idade='" + idade + '\'' +
+                ", profissao='" + profissao + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", rua='" + rua + '\'' +
+                ", cep='" + cep + '\'' +
+                ", cidade='" + cidade + '\'' +
                 '}';
     }
 }

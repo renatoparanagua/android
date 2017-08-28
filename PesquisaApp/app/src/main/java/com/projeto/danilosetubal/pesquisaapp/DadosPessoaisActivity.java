@@ -1,14 +1,18 @@
 package com.projeto.danilosetubal.pesquisaapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.view.View;
 
 import java.util.ArrayList;
 
 public class DadosPessoaisActivity extends AppCompatActivity {
 
+    EditText editNome, editIdade;
     Spinner spProfissao;
     ArrayList<String> listProfissoes;
     ArrayAdapter<String> adapterProfissoes;
@@ -39,6 +43,29 @@ public class DadosPessoaisActivity extends AppCompatActivity {
 
         // Chamada da montagem do spinner
         montarSpinner();
+
+        // Resgatar elementos do form
+        editNome = (EditText) findViewById(R.id.editNome);
+        editIdade = (EditText) findViewById(R.id.editCidade);
+    }
+
+    public void enviar(View V) {
+        String nome = editNome.getText().toString();
+        // int idade = npIdade.getValue();
+        String profissao = (String) spProfissao.getSelectedItem();
+
+        if (nome.equals("")) {
+            setResult(RESULT_CANCELED);
+        } else {
+            Intent it = new Intent();
+            it.putExtra("pnome", nome);
+            // it.putExtra("pidade", idade);
+            it.putExtra("pprofissoa", profissao);
+
+            setResult(RESULT_OK, it);
+        }
+        finish();
+
     }
 
 }

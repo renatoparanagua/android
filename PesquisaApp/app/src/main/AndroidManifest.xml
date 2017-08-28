@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_resultado"
+            android:name=".ResultadoActivity"
             android:label="@string/title_activity_resultado"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DadosPessoaisActivity" />
