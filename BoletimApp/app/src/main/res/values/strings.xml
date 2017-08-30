@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Boletim App</string>
+    <string name="btnAv1">Avaliação 1</string>
+    <string name="btnAv2">Avaliação 2</string>
+    <string name="btnFinish">Finalizar</string>
+    <string name="title_activity_avaliacao">AvaliacaoActivity</string>
+    <string name="avTv">Avaliação</string>
+    <string name="profTv">Professor</string>
+    <string name="profHint">Digite o professor</string>
+    <string name="disciplinaTv">Disciplina</string>
+
+    <string name="notaTv">Nota</string>
+    <string name="notaHint">Digite a nota</string>
+
+    <string name="btnEnviar">Enviar</string>
+    <string name="btnVoltar">Voltar</string>
+</resources>
