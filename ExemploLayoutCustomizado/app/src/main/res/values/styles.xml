@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="editText" parent="base">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:shadowColor">#000</item>
+        <item name="android:elevation">7dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/edit_text</item>
+    </style>
+
+    <style name="botao" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_custom</item>
+    </style>
+
+
+
+</resources>
