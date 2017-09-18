@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_description">Este aplicativo informa se você está apto ou não para votar nas próximas eleições.</string>
+    <string name="hint_name">Digite seu nome</string>
+    <string name="tv_age">Idade:</string>
+    <string name="btn_vote">Posso votar?</string>
+    <string name="app_name">VotanteMaior</string>
+</resources>

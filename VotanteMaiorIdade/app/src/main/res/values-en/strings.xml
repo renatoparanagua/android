@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VotanteMaior</string>
+    <string name="tv_age">Age:</string>
+    <string name="hint_name">Type your name</string>
+    <string name="btn_vote">I can vote?</string>
+    <string name="app_description">This app tells you whether you\'re fit or not to vote in the next elections.</string>
+</resources>

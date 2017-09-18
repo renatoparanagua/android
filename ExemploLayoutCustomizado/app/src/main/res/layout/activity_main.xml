@@ -5,20 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.projeto.danilosetubal.exemplolayoutcustomizado.MainActivity">
+    tools:context="florianopolis.senac.renato.exemplolayoutcustomizado.MainActivity">
 
     <EditText
         style="@style/editText"
-        android:text="Hello World!"
         />
 
     <EditText
         style="@style/editText"
-        android:text="Hello World!"
         />
 
     <Button
-        style="@style/botao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Testando"
