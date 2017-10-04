@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,15 +33,57 @@ public class PrincipalActivity extends AppCompatActivity {
 
         lvPedidos = (ListView) findViewById(R.id.lvPedidos);
 
-        //Criacao do arraylist vazio
         listPedidos = new ArrayList<>();
         myAdapter = new MyAdapter(listPedidos, this);
         lvPedidos.setAdapter(myAdapter);
 
-        lvPedidos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvPedidos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(PrincipalActivity.this, "Clique curto", Toast.LENGTH_SHORT).show();
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final Pedido pedido = (Pedido) myAdapter.getItem(i);
+
+                AlertDialog.Builder alerta = new AlertDialog.Builder(PrincipalActivity.this);
+                alerta.setTitle("Opções clique longo");
+                alerta.setMessage(pedido.getItemPedido().toString());
+
+                alerta.setPositiveButton("+1", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        pedido.addMais1();
+                        myAdapter.notifyDataSetChanged();
+
+                        total += pedido.getItemPedido().getValor();
+                        atualizarTotal();
+                    }
+                });
+
+                alerta.setNegativeButton("-1", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                            if(pedido.getQuantidade()>1) {
+                                pedido.removMenos1();
+                                myAdapter.notifyDataSetChanged();
+
+                                total -= pedido.getItemPedido().getValor();
+                                atualizarTotal();
+                            }
+                    }
+                });
+
+                alerta.setNeutralButton("Deletar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        myAdapter.remover(pedido);
+                        myAdapter.notifyDataSetChanged();
+
+                        total -= pedido.getSubtotal();
+                        atualizarTotal();
+                    }
+                });
+
+                alerta.show();
+
+                return true;
             }
         });
 
@@ -57,6 +98,15 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        if(resultCode==RESULT_OK){
+            Bundle param = data.getExtras();
+            Pedido pedido = (Pedido) param.getSerializable("pedido");
+            myAdapter.add(pedido);
+            myAdapter.notifyDataSetChanged();
+
+            total += pedido.getSubtotal();
+            atualizarTotal();
+        }
     }
 
     protected void atualizarTotal(){

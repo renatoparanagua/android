@@ -1,10 +1,10 @@
 package senac.renato.correcaominhapedida.activitys;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
 import android.widget.ArrayAdapter;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
@@ -15,7 +15,8 @@ import senac.renato.correcaominhapedida.R;
 import senac.renato.correcaominhapedida.modelos.Pedido;
 import senac.renato.correcaominhapedida.modelos.Produto;
 
-public class AddProdutoActivity extends Activity {
+
+public class AddProdutoActivity extends AppCompatActivity {
 
     ArrayList<Produto> listProdutos;
     Spinner spProduto;
@@ -48,8 +49,10 @@ public class AddProdutoActivity extends Activity {
         pedido.setItemPedido((Produto) spProduto.getSelectedItem());
         pedido.setQuantidade(npQuantidade.getValue());
 
+        Intent it = new Intent();
+        it.putExtra("pedido", pedido);
 
-
+        setResult(RESULT_OK, it);
         finish();
     }
 

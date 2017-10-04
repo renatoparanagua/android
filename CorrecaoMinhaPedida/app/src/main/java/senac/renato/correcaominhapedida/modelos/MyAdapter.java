@@ -41,8 +41,6 @@ public class MyAdapter extends BaseAdapter {
         return i;
     }
 
-
-
     public void add(Pedido p){
         listPedidos.add(p);
     }
@@ -58,9 +56,13 @@ public class MyAdapter extends BaseAdapter {
 
         TextView tvQuantidade = (TextView) view.findViewById(R.id.tvQuantidade);
         TextView tvNomeProduto = (TextView) view.findViewById(R.id.tvNomeProduto);
+        TextView tvValorProduto = (TextView) view.findViewById(R.id.tvValorProduto);
+        TextView tvSubtotal = (TextView) view.findViewById(R.id.tvSubtotal);
 
-        tvQuantidade.setText(pedido.getQuantidade());
+        tvQuantidade.setText(""+pedido.getQuantidade());
         tvNomeProduto.setText(pedido.getItemPedido().getNome());
+        tvValorProduto.setText("R$ "+pedido.getItemPedido().getValor());
+        tvSubtotal.setText("Subtotal: R$ "+pedido.getSubtotal());
 
         return view;
     }
