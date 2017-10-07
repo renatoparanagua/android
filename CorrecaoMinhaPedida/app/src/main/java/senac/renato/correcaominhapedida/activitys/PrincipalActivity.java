@@ -37,56 +37,6 @@ public class PrincipalActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(listPedidos, this);
         lvPedidos.setAdapter(myAdapter);
 
-        lvPedidos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                final Pedido pedido = (Pedido) myAdapter.getItem(i);
-
-                AlertDialog.Builder alerta = new AlertDialog.Builder(PrincipalActivity.this);
-                alerta.setTitle("Opções clique longo");
-                alerta.setMessage(pedido.getItemPedido().toString());
-
-                alerta.setPositiveButton("+1", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        pedido.addMais1();
-                        myAdapter.notifyDataSetChanged();
-
-                        total += pedido.getItemPedido().getValor();
-                        atualizarTotal();
-                    }
-                });
-
-                alerta.setNegativeButton("-1", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                            if(pedido.getQuantidade()>1) {
-                                pedido.removMenos1();
-                                myAdapter.notifyDataSetChanged();
-
-                                total -= pedido.getItemPedido().getValor();
-                                atualizarTotal();
-                            }
-                    }
-                });
-
-                alerta.setNeutralButton("Deletar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        myAdapter.remover(pedido);
-                        myAdapter.notifyDataSetChanged();
-
-                        total -= pedido.getSubtotal();
-                        atualizarTotal();
-                    }
-                });
-
-                alerta.show();
-
-                return true;
-            }
-        });
-
     }
 
     public void chamarTela(View v){

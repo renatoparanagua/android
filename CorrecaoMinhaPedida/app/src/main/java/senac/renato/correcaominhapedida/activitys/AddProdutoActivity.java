@@ -43,7 +43,6 @@ public class AddProdutoActivity extends AppCompatActivity {
 
     }
 
-
     public void enviar(View v){
         Pedido pedido = new Pedido();
         pedido.setItemPedido((Produto) spProduto.getSelectedItem());
