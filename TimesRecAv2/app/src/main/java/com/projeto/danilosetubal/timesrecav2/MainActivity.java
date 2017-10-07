@@ -32,12 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void renderizarListView() {
-        Toast.makeText(this, "Renderizar ListView!", Toast.LENGTH_SHORT).show();
-
-    }
-
-    public void novo(View v) {
+    public void novoTorcedor(View v) {
         Intent intent = new Intent(this, CadastroTorcedorActivity.class);
         startActivityForResult(intent, RESULT_FIRST_USER);
     }

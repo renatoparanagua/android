@@ -11,13 +11,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastro de Torcedor"
+        android:text="@string/tvRegisterSoccerFan"
         android:textSize="20dp"/>
 
     <Spinner
+        android:id="@+id/spTimes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spTimes"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         ></Spinner>
@@ -25,24 +25,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome: "/>
+        android:text="@string/tvName"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite o nome"
+        android:hint="@string/hintName"
         android:id="@+id/editNome"
         android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Idade: "
+        android:text="@string/tvAge"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite a idade"
+        android:hint="@string/hintAge"
         android:id="@+id/editIdade"
+        android:maxLength="2"
         android:layout_marginBottom="20dp"
         android:inputType="number"/>
 
@@ -55,14 +56,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Enviar"
+            android:text="@string/btnTxtSave"
+            android:id="@+id/btnEnviar"
             android:onClick="enviar"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Voltar"
+            android:text="@string/btnTxtBack"
             android:onClick="voltar"/>
 
     </LinearLayout>

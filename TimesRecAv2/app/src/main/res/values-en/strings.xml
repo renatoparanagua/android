@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Soccer Team App</string>
+    <string name="hintAge">Type a age</string>
+    <string name="hintName">Type a name</string>
+    <string name="tvAge">Age:</string>
+    <string name="tvName">Name:</string>
+    <string name="tvRegisterSoccerFan">"Soccer Fan Registration "</string>
+    <string name="btnTxtBack">Back</string>
+    <string name="tvDescBtnNew">Click above to register a new soccer fan.</string>
+    <string name="btnTxtNew">New</string>
+    <string name="btnTxtSave">Save</string>
+</resources>

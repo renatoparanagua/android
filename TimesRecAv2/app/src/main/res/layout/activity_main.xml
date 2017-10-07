@@ -12,19 +12,27 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Novo"
-        android:layout_marginBottom="20dp"
-        android:onClick="novo"
+        android:text="@string/btnTxtNew"
+        android:layout_marginBottom="2dp"
+        android:onClick="novoTorcedor"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvDescBtnNew"
+        android:textSize="12dp"
+        android:textStyle="italic"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
     <ListView
+        android:id="@+id/listViewCustom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#ccc"
         android:dividerHeight="1sp"
-        android:id="@+id/listViewCustom">
+        >
     </ListView>
-
-
 
 </LinearLayout>

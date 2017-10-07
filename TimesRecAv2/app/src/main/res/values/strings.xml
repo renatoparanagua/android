@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">TimesRecAv2</string>
+    <string name="app_name">Times App</string>
+    <string name="btnTxtNew">Novo</string>
+    <string name="tvDescBtnNew">Clique acima para cadastrar um novo torcedor.</string>
+    <string name="tvRegisterSoccerFan">Cadastro de Torcedor</string>
+    <string name="tvName">Nome:</string>
+    <string name="hintName">Digite o nome</string>
+    <string name="tvAge">Idade:</string>
+    <string name="hintAge">Digite a idade</string>
+    <string name="btnTxtBack">Voltar</string>
+    <string name="btnTxtSave">Salvar</string>
 </resources>

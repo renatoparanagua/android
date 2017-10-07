@@ -31,9 +31,16 @@ public class SpinnerAdapter extends ArrayAdapter<Time> {
 
     public View getView(int position, View convertView, ViewGroup parent ){
         View itemView=inflater.inflate(groupid,parent,false);
-        ImageView imageView=(ImageView)itemView.findViewById(R.id.img);
-        imageView.setImageResource(list.get(position).getImageId());
-        TextView textView=(TextView)itemView.findViewById(R.id.txt);
+        ImageView imageView = itemView.findViewById(R.id.img);
+
+        if (list.get(position).getImageId() == null) {
+            imageView.setImageResource(0);
+        } else {
+            imageView.setImageResource(list.get(position).getImageId());
+        }
+
+        //imageView.setImageResource(list.get(position).getImageId());
+        TextView textView = itemView.findViewById(R.id.txt);
         textView.setText(list.get(position).getNome());
         return itemView;
     }

@@ -6,24 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.view.View.OnClickListener;
+
 
 import java.util.ArrayList;
-
-import static java.lang.Integer.parseInt;
 
 public class CadastroTorcedorActivity extends AppCompatActivity {
 
     Spinner spTimes;
     EditText etNome, etIdade;
-    String itemStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_torcedor);
-        etNome = (EditText) findViewById(R.id.editNome);
-        etIdade = (EditText) findViewById(R.id.editIdade);
+
         renderizarSpinner();
     }
 
@@ -37,20 +34,28 @@ public class CadastroTorcedorActivity extends AppCompatActivity {
         spTimes = (Spinner) findViewById(R.id.spTimes);
         SpinnerAdapter spAdapter = new SpinnerAdapter(this, R.layout.row, R.id.txt, listTimes);
         spTimes.setAdapter(spAdapter);
-        String itemString = spTimes.getSelectedItem().toString();
     }
 
+
     public void enviar(View v) {
+        etNome = (EditText) findViewById(R.id.editNome);
+        etIdade = (EditText) findViewById(R.id.editIdade);
 
-        Torcedor torcedor = new Torcedor();
-        torcedor.setTime((Time) spTimes.getSelectedItem());
-        torcedor.setNome(etNome.getText().toString());
-        torcedor.setIdade(Integer.parseInt(etIdade.getText().toString()));
+        if (etNome.getText().toString().length() == 0) {
+            etNome.setError("Preencha o nome");
+        } else if (etIdade.getText().length() == 0) {
+            etIdade.setError("Preencha a idade");
+        } else {
+            Torcedor torcedor = new Torcedor();
+            torcedor.setTime((Time) spTimes.getSelectedItem());
+            torcedor.setNome(etNome.getText().toString());
+            torcedor.setIdade(Integer.parseInt(etIdade.getText().toString()));
 
-        Intent it = new Intent();
-        it.putExtra("torcedor", torcedor);
-        setResult(RESULT_OK, it);
-        finish();
+            Intent it = new Intent();
+            it.putExtra("torcedor", torcedor);
+            setResult(RESULT_OK, it);
+            finish();
+        }
     }
 
     public void voltar(View v) {
