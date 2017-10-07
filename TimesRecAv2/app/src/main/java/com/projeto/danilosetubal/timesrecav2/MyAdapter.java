@@ -56,10 +56,11 @@ public class MyAdapter extends BaseAdapter {
 
         TextView tvNome = (TextView) view.findViewById(R.id.tvNome);
         TextView tvIdade = (TextView) view.findViewById(R.id.tvIdade);
+        TextView tvNomeTime = (TextView) view.findViewById(R.id.tvNomeTime);
         ImageView ivImagem = (ImageView) view.findViewById(R.id.imageView);
 
         tvNome.setText(torcedor.getNome());
-        tvIdade.setText(String.valueOf(torcedor.getIdade()));
+        tvIdade.setText(String.valueOf(torcedor.getIdade()) + " anos");
 
         if (torcedor.getTime().getNome().equals("Barcelona")) {
             ivImagem.setImageResource(R.drawable.barcelona);
@@ -71,6 +72,7 @@ public class MyAdapter extends BaseAdapter {
             ivImagem.setImageResource(R.drawable.boca);
         }
 
+        tvNomeTime.setText(torcedor.getTime().getNome());
 
         return view;
     }

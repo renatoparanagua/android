@@ -1,5 +1,7 @@
 package com.projeto.danilosetubal.timesrecav2;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.support.v7.app.AppCompatActivity;
@@ -47,16 +49,28 @@ public class MainActivity extends AppCompatActivity {
         if(resultCode == RESULT_OK){
             Bundle param = data.getExtras();
             Torcedor torcedor = (Torcedor) param.getSerializable("torcedor");
-            Toast.makeText(this, "chamou onActivityResult", Toast.LENGTH_SHORT).show();
-
-            Toast.makeText(this, torcedor.getNome()
-                    + " - " + torcedor.getIdade(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Torcedor incluído com sucesso!", Toast.LENGTH_SHORT).show();
 
             myAdapter.add(torcedor);
             myAdapter.notifyDataSetChanged();
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Sair do aplicativo")
+                .setMessage("Tem certeza que deseja sair?")
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("Não", null)
+                .show();
+    }
 
 }

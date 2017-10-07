@@ -51,12 +51,9 @@ public class CadastroTorcedorActivity extends AppCompatActivity {
         it.putExtra("torcedor", torcedor);
         setResult(RESULT_OK, it);
         finish();
-
-
     }
 
     public void voltar(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
