@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context="com.projeto.danilosetubal.minhacotac.MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ATUALIZAR"
+        android:layout_marginBottom="2dp"
+        android:onClick="buscaCotac"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clique acima para atualizar as cotações"
+        android:textSize="12dp"
+        android:textStyle="italic"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ListView
+        android:id="@+id/listViewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#ccc"
+        android:dividerHeight="1sp">
+    </ListView>
+
+</LinearLayout>
